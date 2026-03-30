@@ -1,0 +1,73 @@
+/* style.css */
+
+/* Facebook classic colors */
+:root {
+    --fb-blue: #1877f2;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1877f2 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+}
+
+.post-card {
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-card .card-header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-card .like-btn {
+    transition: all 0.2s;
+}
+
+.post-card .like-btn.liked {
+    color: #e01e5a;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.textarea {
+    resize: none;
+}
+
+.stories-scroll {
+    scrollbar-width: none;
+}
+
+.stories-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .feed-container {
+        padding: 0 8px;
+    }
+}
+
+/* SEO friendly headings */
+h1, h2, h3 {
+    font-weight: 600;
+}
