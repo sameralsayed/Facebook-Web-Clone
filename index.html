@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Where real people propel your curiosity. Connect with friends, share moments, watch Reels, shop Marketplace, join Groups, and explore with Meta AI. A fully functional Facebook web clone by SAMER SAEID.">
+    <meta name="keywords" content="facebook clone, social network, connect with friends, reels, marketplace, groups, meta ai, stories, share moments, responsive web app, bootstrap, html5, css3, javascript, jquery">
+    <meta name="author" content="SAMER SAEID">
+    <meta name="robots" content="index, follow">
+    <title>Facebook • Connect with friends and the world around you</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-3 d-flex align-items-center" href="#" onclick="return false;">
+                <i class="bi bi-facebook me-1"></i> Facebook
+            </a>
+            
+            <!-- Search Bar -->
+            <form class="d-flex flex-grow-1 mx-3 mx-lg-4" onsubmit="fakeSearch(event)">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-0"><i class="bi bi-search text-dark"></i></span>
+                    <input type="text" id="searchInput" class="form-control border-0 shadow-sm" placeholder="Search Facebook" aria-label="Search">
+                </div>
+            </form>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-3"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav Icons -->
+                <ul class="navbar-nav ms-auto d-flex align-items-center gap-1 gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="#" onclick="return false;" title="Home"><i class="bi bi-house-door-fill fs-4"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="return false;" title="Watch"><i class="bi bi-play-circle fs-4"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="return false;" title="Marketplace"><i class="bi bi-shop fs-4"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="return false;" title="Groups"><i class="bi bi-people-fill fs-4"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-white" href="#" onclick="return false;" title="Meta AI"><i class="bi bi-robot fs-4"></i></a>
+                    </li>
+                    
+                    <!-- Profile -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center text-white" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://i.pravatar.cc/32?u=samer" alt="Samer Saeid" class="rounded-circle border border-white border-2" width="32" height="32">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li><a class="dropdown-item" href="#" onclick="return false;">👤 Profile</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="return false;">⚙️ Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="fakeLogout(event)">🚪 Log Out</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Messenger, Notifications, Menu -->
+                    <li class="nav-item"><a class="nav-link text-white" href="#" onclick="return false;"><i class="bi bi-chat-dots-fill fs-4"></i></a></li>
+                    <li class="nav-item position-relative"><a class="nav-link text-white" href="#" onclick="return false;"><i class="bi bi-bell-fill fs-4"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span></a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#" onclick="return false;"><i class="bi bi-grid-3x3-gap-fill fs-4"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid pt-5 mt-5">
+        <div class="row g-3">
+            
+            <!-- LEFT SIDEBAR -->
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-top pt-4" style="top: 70px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5" onclick="return false;">
+                            <img src="https://i.pravatar.cc/32?u=samer" alt="" class="rounded-circle me-3" width="32"> 
+                            <span class="fw-semibold">Samer Saeid</span>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-people-fill text-primary me-3"></i> Friends</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-clock-history text-primary me-3"></i> Memories</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-bookmark-fill text-primary me-3"></i> Saved</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-play-circle-fill text-primary me-3"></i> Watch</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-shop-window text-primary me-3"></i> Marketplace</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-people-fill text-primary me-3"></i> Groups</li>
+                        <li class="list-group-item border-0 d-flex align-items-center py-2 fs-5"><i class="bi bi-robot text-primary me-3"></i> Meta AI</li>
+                        <li class="list-group-item border-0 text-primary fw-semibold py-2 cursor-pointer" onclick="return false;">See more <i class="bi bi-chevron-down ms-2"></i></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- CENTER FEED -->
+            <div class="col-lg-6">
+                
+                <!-- Stories -->
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex gap-2 overflow-auto pb-2" id="storiesContainer">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Create Post -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/40?u=samer" alt="Your profile" class="rounded-circle me-3" width="40" height="40">
+                            <textarea id="postTextarea" class="form-control border-0 shadow-none fs-5" rows="2" placeholder="What's on your mind, Samer?"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between border-top pt-3">
+                            <button onclick="fakeMediaClick('photo')" class="btn btn-light flex-fill me-1"><i class="bi bi-image-fill text-success me-2"></i>Photo</button>
+                            <button onclick="fakeMediaClick('video')" class="btn btn-light flex-fill me-1"><i class="bi bi-camera-video-fill text-danger me-2"></i>Video</button>
+                            <button onclick="fakeMediaClick('feeling')" class="btn btn-light flex-fill"><i class="bi bi-emoji-smile-fill text-warning me-2"></i>Feeling</button>
+                            <button onclick="createNewPost()" class="btn btn-primary ms-3 px-4">Post</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FEED CONTAINER -->
+                <div id="feedContainer">
+                    <!-- Posts populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- RIGHT SIDEBAR -->
+            <div class="col-lg-3 d-none d-xl-block">
+                <div class="sticky-top pt-4" style="top: 70px;">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                            <h6 class="fw-semibold mb-0">Your Pages</h6>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-flag-fill text-primary fs-3 me-3"></i>
+                                <div>
+                                    <p class="mb-0 fw-semibold">Samer's Tech Hub</p>
+                                    <small class="text-muted">• 12k likes</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white border-0">
+                            <h6 class="fw-semibold mb-0">Contacts • Online <span class="text-success">●</span></h6>
+                        </div>
+                        <div class="card-body p-0" id="contactsContainer">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer class="bg-light py-4 mt-5 border-top">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-3">
+                <p class="mb-0 text-muted small">© Copyright SAMER SAEID. All rights reserved.</p>
+                <p class="mb-0 text-muted small">Made by ♥️ <a href="https://bio.link/samer" target="_blank" class="text-decoration-none text-primary fw-semibold">SAMER SAEID</a></p>
+                <div class="d-flex gap-3">
+                    <a href="#" onclick="return false;" class="text-muted small">Privacy</a>
+                    <a href="#" onclick="return false;" class="text-muted small">Terms</a>
+                    <a href="#" onclick="return false;" class="text-muted small">Cookies</a>
+                </div>
+                <small class="text-muted">Optimized for SEO • Responsive across all devices</small>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS + jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
